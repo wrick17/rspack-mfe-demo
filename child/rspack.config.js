@@ -74,7 +74,6 @@ module.exports = {
     }),
     new rspack.container.ModuleFederationPlugin({
       name: "child",
-      uniqueName: "child",
       filename: "remote.js",
       exposes: {
         "./app": "./src/App.jsx",
