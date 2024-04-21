@@ -15,6 +15,9 @@ module.exports = {
   entry: {
     main: "./src/main.jsx",
   },
+  output: {
+    uniqueName: "host",
+  },
   resolve: {
     extensions: ["...", ".ts", ".tsx", ".js", ".jsx"],
   },
@@ -71,7 +74,6 @@ module.exports = {
     }),
     new rspack.container.ModuleFederationPlugin({
       name: "host",
-      uniqueName: "host",
       filename: "remote.js",
       exposes: {
         "./home": "./src/Home.jsx",
@@ -93,5 +95,6 @@ module.exports = {
     isDev && new refreshPlugin(),
   ].filter(Boolean),
 };
+
 
 

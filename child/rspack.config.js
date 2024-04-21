@@ -15,6 +15,9 @@ module.exports = {
   entry: {
     main: "./src/main.jsx",
   },
+  output: {
+    uniqueName: "child",
+  },
   resolve: {
     extensions: ["...", ".ts", ".tsx", ".js", ".jsx"],
   },
@@ -93,6 +96,7 @@ module.exports = {
     isDev && new refreshPlugin(),
   ].filter(Boolean),
 };
+
 
 
 
